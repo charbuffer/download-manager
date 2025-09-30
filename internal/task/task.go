@@ -33,6 +33,7 @@ func (s *TaskService) AddTask(ctx *gin.Context) {
 
 	if err := ctx.ShouldBindJSON(&req); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"error": "Bad Request"})
+		return
 	}
 
 	urls := utils.RemoveURLDuplicates(req.Urls)

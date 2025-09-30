@@ -1,5 +1,5 @@
 package request
 
 type AddTask struct {
-	Urls []string `json:"urls" binding:"required"`
+	Urls []string `json:"urls" binding:"required,dive,url"`
 }
